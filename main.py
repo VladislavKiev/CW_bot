@@ -44,4 +44,14 @@ def hendler_text(message):
 #         # w = observation.weather
 #         # print(w)
 #
+city = input("Какой город вас интересует?: ")
+# owm = pyowm.OWM('0fdcac5a6f22992894a40f9f64c50f80')
+mgr = owm.weather_manager()
+observation = mgr.weather_at_place(city)
+# observation = owm.weather_manager().weather_at_place(city)
+w = observation.weather
+temp = w.temperature('celsius')['temp']
+
+print(w)
+
 # bot.polling()
